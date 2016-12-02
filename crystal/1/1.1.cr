@@ -17,9 +17,9 @@ steps.each do |step|
   distance = step[1..-1].to_i
 
   case turn
-  when 'L'
-    direction = (direction + 1) % 4
   when 'R'
+    direction = (direction + 1) % 4
+  when 'L'
     direction = (direction - 1) % 4
   end
 
