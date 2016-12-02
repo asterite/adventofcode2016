@@ -1,4 +1,4 @@
-input = File.read("#{__DIR__}/../../input")
+input = File.read("#{__DIR__}/../../inputs/1")
 steps = input.split(",").map(&.strip)
 
 directions = [
