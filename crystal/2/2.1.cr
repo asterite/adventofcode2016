@@ -8,9 +8,8 @@ pad = [
 
 x = 1
 y = 1
-code = [] of Int32
 
-input.each_line do |line|
+code = input.each_line.join do |line|
   line.each_char do |char|
     case char
     when 'U'
@@ -23,7 +22,7 @@ input.each_line do |line|
       x = {x + 1, 2}.min
     end
   end
-  code << pad[y][x]
+  pad[y][x]
 end
 
-puts code.join
+puts code

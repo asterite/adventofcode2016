@@ -16,9 +16,8 @@ pad = [
 
 x = 0
 y = 2
-code = [] of typeof(pad[0][0])
 
-input.each_line do |line|
+code = input.each_line.join do |line|
   line.each_char do |char|
     case char
     when 'U'
@@ -35,7 +34,7 @@ input.each_line do |line|
       x = nx if pad[y][nx]
     end
   end
-  code << pad[y][x]
+  pad[y][x]
 end
 
-puts code.join
+puts code
