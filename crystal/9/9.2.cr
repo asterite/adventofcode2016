@@ -1,6 +1,6 @@
 require "string_scanner"
 
-def decompressed_length(input, level = 0)
+def decompressed_length(input)
   total = 0_i64
   scanner = StringScanner.new(input)
   until scanner.eos?
@@ -9,7 +9,7 @@ def decompressed_length(input, level = 0)
       count = scanner[1].to_i
       amount = scanner[2].to_i
       chunk = input[scanner.offset, count].gsub(/\s/, "")
-      total += decompressed_length(chunk, level + 1) * amount
+      total += decompressed_length(chunk) * amount
       scanner.offset += count
     when .scan(/[^\(]+/)
       total += scanner[0].gsub(/\s/, "").size

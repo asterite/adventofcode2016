@@ -1,6 +1,6 @@
 require "string_scanner"
 
-def decompressed_length(input, level = 0)
+def decompressed_length(input)
   total = 0_i64
   scanner = StringScanner.new(input)
   until scanner.eos?
