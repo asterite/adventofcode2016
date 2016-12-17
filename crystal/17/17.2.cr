@@ -5,9 +5,7 @@ steps = Deque{ {0, 0, input, 0} }
 max = 0
 while pos = steps.shift?
   x, y, string, dist = pos
-
-  hash = Crypto::MD5.hex_digest(string)
-  opens = hash[0...4].chars.map &.>= 'b'
+  opens = Crypto::MD5.hex_digest(string)[0...4].chars.map &.>= 'b'
 
   { {'U', 0, -1},
     {'D', 0, 1},
